@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace Rawilk\Yubikey\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class YubikeyCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'yubikey-u2f';
 
     public $description = 'My command';
 

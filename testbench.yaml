@@ -1,2 +1,2 @@
 providers:
-    - VendorName\Skeleton\SkeletonProvider
+    - Rawilk\Yubikey\YubikeyProvider
