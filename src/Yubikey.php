@@ -37,8 +37,7 @@ class Yubikey
     public function __construct(
         protected readonly string $clientId,
         string $secretKey
-    )
-    {
+    ) {
         $this->secretKey = base64_decode($secretKey);
         $this->urls = config('yubikey-u2f.urls', [
             'api.yubico.com/wsapi/2.0/verify',
