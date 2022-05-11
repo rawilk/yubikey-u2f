@@ -20,5 +20,4 @@ jobs:
             - name: Commit changes
               uses: stefanzweifel/git-auto-commit-action@v4
               with:
-                  token: ${{ secrets.GH_TOKEN }}
                   commit_message: Fix styling
