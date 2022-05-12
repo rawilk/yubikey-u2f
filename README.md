@@ -4,7 +4,7 @@
 [![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/rawilk/yubikey-u2f/run-tests?label=tests)](https://github.com/rawilk/yubikey-u2f/actions?query=workflow%3Arun-tests+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/rawilk/yubikey-u2f.svg?style=flat-square)](https://packagist.org/packages/rawilk/yubikey-u2f)
 
-![social image](https://banners.beyondco.de/yubikey-u2f.png?theme=light&packageManager=composer+require&packageName=rawilk%2Fyubikey-u2f&pattern=architect&style=style_1&description=Add+Yubikey+U2F+authentication+to+Laravel.&md=1&showWatermark=0&fontSize=100px&images=finger-print)
+![social image](https://banners.beyondco.de/yubikey-u2f.png?theme=light&packageManager=composer+require&packageName=rawilk%2Fyubikey-u2f&pattern=parkayFloor&style=style_1&description=Add+Yubikey+U2F+authentication+to+Laravel.&md=1&showWatermark=0&fontSize=100px&images=finger-print)
 
 If you have a YubiKey from [Yubico](https://yubico.com), you can add two-factor support for a security key to your Laravel applications. Your user accounts
 will be able to register up to 5 security keys (configurable) to their account, and then use those keys as a form of two-factor authentication for your application.
