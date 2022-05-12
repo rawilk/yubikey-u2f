@@ -119,7 +119,7 @@ function fakeApiCalls(?YubicoResponseStatus $status = null): void
 
 function yubicoFakeResponse(?YubicoResponseStatus $status = YubicoResponseStatus::OK): array
 {
-     return [
+    return [
         'h=lvan2kNzPaBviqKNeut89JgnF7c=',
         't=2022-05-11T20:12:15Z0099',
         'otp=' . YubicoTestTokens::REPLAYED_OTP->value,
