@@ -2,7 +2,7 @@
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/rawilk/yubikey-u2f.svg?style=flat-square)](https://packagist.org/packages/rawilk/yubikey-u2f)
 ![Tests](https://github.com/rawilk/yubikey-u2f/workflows/Tests/badge.svg?style=flat-square)
-[![Total Downloads](https://img.shields.io/packagist/dt/rawilk/laravel-form-components.svg?style=flat-square)](https://packagist.org/packages/rawilk/yubikey-u2f)
+[![Total Downloads](https://img.shields.io/packagist/dt/rawilk/yubikey-u2f.svg?style=flat-square)](https://packagist.org/packages/rawilk/yubikey-u2f)
 
 
 ![social image](https://banners.beyondco.de/yubikey-u2f.png?theme=light&packageManager=composer+require&packageName=rawilk%2Fyubikey-u2f&pattern=parkayFloor&style=style_1&description=Add+Yubikey+U2F+authentication+to+Laravel.&md=1&showWatermark=0&fontSize=100px&images=finger-print)
