@@ -9,7 +9,7 @@
 If you have a YubiKey from [Yubico](https://yubico.com), you can add two-factor support for a security key to your Laravel applications. Your user accounts
 will be able to register up to 5 security keys (configurable) to their account, and then use those keys as a form of two-factor authentication for your application.
 
-*Note:* This package only provides the backend code necessary for verifying and associating keys with users. You will need to the UI necessary for this and also
+**Note:** This package only provides the backend code necessary for verifying and associating keys with users. You will need to the UI necessary for this and also
 the logic to your authentication workflows for two-factor authentication.
 
 ### Requirements:
@@ -58,7 +58,7 @@ Auth::user()->associateYubikeyIdentity($response['identity']);
 $user->verifyYubikeyIdentity(request()->otp);
 ```
 
-*Note:* `request()->otp` is just an example of retrieving the input sent to the server containing the security key signature that is generated
+**Note:** `request()->otp` is just an example of retrieving the input sent to the server containing the security key signature that is generated
 when touching the security key. Make sure to adjust accordingly depending on how you capture that.
 
 ## Testing
