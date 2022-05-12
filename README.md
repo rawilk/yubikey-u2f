@@ -87,8 +87,9 @@ Please review [my security policy](.github/SECURITY.md) on how to report securit
 -   [All Contributors](../../contributors)
 
 Inspiration for this package comes from:
-- [marcinkozak/yubikey](https://github.com/MarcinKozak/Yubikey)
-- [Yubico/php-yubico](https://github.com/Yubico/php-yubico)
+
+-   [marcinkozak/yubikey](https://github.com/MarcinKozak/Yubikey)
+-   [Yubico/php-yubico](https://github.com/Yubico/php-yubico)
 
 ## License
 
