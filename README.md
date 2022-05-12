@@ -6,7 +6,11 @@
 
 ---
 
-If you have a YubiKey from [Yubico](https://yubico.com), you can add two-factor support for a security key to your Laravel applications.
+If you have a YubiKey from [Yubico](https://yubico.com), you can add two-factor support for a security key to your Laravel applications. Your user accounts
+will be able to register up to 5 security keys (configurable) to their account, and then use those keys as a form of two-factor authentication for your application.
+
+*Note:* This package only provides the backend code necessary for verifying and associating keys with users. You will need to the UI necessary for this and also
+the logic to your authentication workflows for two-factor authentication.
 
 ### Requirements:
 
@@ -24,23 +28,38 @@ composer require rawilk/yubikey-u2f
 You can publish and run the migrations with:
 
 ```bash
-php artisan vendor:publish --provider="Rawilk\Yubikey\YubikeyServiceProvider" --tag="yubikey-u2f-migrations"
+php artisan vendor:publish --tag="yubikey-u2f-migrations"
 php artisan migrate
 ```
 
 You can publish the config file with:
 ```bash
-php artisan vendor:publish --provider="Rawilk\Yubikey\YubikeyServiceProvider" --tag="yubikey-u2f-config"
+php artisan vendor:publish --tag="yubikey-u2f-config"
 ```
 
 You can view the default configuration here: https://github.com/rawilk/yubikey-u2f/blob/main/config/yubikey-u2f.php
 
+You can publish the language files provided by this package with:
+```bash
+php artisan vendor:publish --tag="yubikey-u2f-translations"
+```
+
 ## Usage
 
+First, add the `\Rawilk\Yubikey\Models\HasYubikeys` trait to your user model. Then you can verify/associate a key for a user like this:
+
 ``` php
-$yubikey-u2f = new Rawilk\Yubikey;
-echo $yubikey-u2f->echoPhrase('Hello, Rawilk!');
+// An exception will be thrown if the key is not valid.
+$response = \Rawilk\Yubikey\Facades\Yubikey::verify(request()->otp);
+
+Auth::user()->associateYubikeyIdentity($response['identity']);
+
+// On a login 2fa request, you can verify the key is valid and tied to the user like this:
+$user->verifyYubikeyIdentity(request()->otp);
 ```
+
+*Note:* `request()->otp` is just an example of retrieving the input sent to the server containing the security key signature that is generated
+when touching the security key. Make sure to adjust accordingly depending on how you capture that.
 
 ## Testing
 
