@@ -84,6 +84,10 @@ Please review [my security policy](.github/SECURITY.md) on how to report securit
 - [Randall Wilk](https://github.com/rawilk)
 - [All Contributors](../../contributors)
 
+Inspiration for this package comes from:
+- [marcinkozak/yubikey](https://github.com/MarcinKozak/Yubikey)
+- [Yubico/php-yubico](https://github.com/Yubico/php-yubico)
+
 ## License
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
