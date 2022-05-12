@@ -11,4 +11,6 @@ enum YubicoTestTokens: string
 {
     case BAD_OTP = 'vvincrediblegfnchniugtdcbrleehenethrlbihdijc';
     case REPLAYED_OTP = 'vvincrediblegfnchniugtdcbrleehenethrlbihdijv';
+    case OTP_IDENTITY = 'vvincredible';
+    case OTHER_OTP_IDENTITY = 'vvincredoth';
 }

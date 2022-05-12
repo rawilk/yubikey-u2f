@@ -8,13 +8,17 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Schema::create('yubikey-u2f_table', static function (Blueprint $table) {
+        Schema::create(config('yubikey-u2f.database.table'), static function (Blueprint $table) {
             $table->id();
-
-            // add fields
-
+            $table->string('key_id', 20)->index();
+            $table->foreignId('user_id')
+                ->constrained('users')
+                ->cascadeOnDelete();
+            $table->string('name')->default('Security key');
             $table->dateTime('created_at')->nullable();
             $table->dateTime('updated_at')->nullable();
+
+            $table->unique(['user_id', 'key_id']);
         });
     }
 };

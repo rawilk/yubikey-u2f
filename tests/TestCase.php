@@ -5,6 +5,7 @@ namespace Rawilk\Yubikey\Tests;
 use Dotenv\Dotenv;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
+use Rawilk\Yubikey\Tests\Models\User;
 use Rawilk\Yubikey\YubikeyServiceProvider;
 
 class TestCase extends Orchestra
@@ -40,7 +41,15 @@ class TestCase extends Orchestra
 
     public function getEnvironmentSetUp($app)
     {
-        // include_once __DIR__ . '/../database/migrations/create_yubikey-u2f_table.php.stub';
-        // (new \CreatePackageTable())->up();
+        $testMigrations = [
+            'create_users_table.php',
+        ];
+        foreach ($testMigrations as $path) {
+            $migration = include __DIR__ . '/database/migrations/' . $path;
+            $migration->up();
+        }
+
+        $migration = include __DIR__ . '/../database/migrations/create_yubikey_u2f_table.php.stub';
+        $migration->up();
     }
 }
