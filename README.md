@@ -14,8 +14,8 @@ the logic to your authentication workflows for two-factor authentication.
 
 ### Requirements:
 
-- [Buy a YubiKey](https://www.yubico.com/store/)
-- [Generate an API Key](https://upgrade.yubico.com/getapikey/)
+-   [Buy a YubiKey](https://www.yubico.com/store/)
+-   [Generate an API Key](https://upgrade.yubico.com/getapikey/)
 
 ## Installation
 
@@ -33,6 +33,7 @@ php artisan migrate
 ```
 
 You can publish the config file with:
+
 ```bash
 php artisan vendor:publish --tag="yubikey-u2f-config"
 ```
@@ -40,6 +41,7 @@ php artisan vendor:publish --tag="yubikey-u2f-config"
 You can view the default configuration here: https://github.com/rawilk/yubikey-u2f/blob/main/config/yubikey-u2f.php
 
 You can publish the language files provided by this package with:
+
 ```bash
 php artisan vendor:publish --tag="yubikey-u2f-translations"
 ```
@@ -48,7 +50,7 @@ php artisan vendor:publish --tag="yubikey-u2f-translations"
 
 First, add the `\Rawilk\Yubikey\Models\HasYubikeys` trait to your user model. Then you can verify/associate a key for a user like this:
 
-``` php
+```php
 // An exception will be thrown if the key is not valid.
 $response = \Rawilk\Yubikey\Facades\Yubikey::verify(request()->otp);
 
@@ -63,7 +65,7 @@ when touching the security key. Make sure to adjust accordingly depending on how
 
 ## Testing
 
-``` bash
+```bash
 composer test
 ```
 
@@ -81,8 +83,8 @@ Please review [my security policy](.github/SECURITY.md) on how to report securit
 
 ## Credits
 
-- [Randall Wilk](https://github.com/rawilk)
-- [All Contributors](../../contributors)
+-   [Randall Wilk](https://github.com/rawilk)
+-   [All Contributors](../../contributors)
 
 ## License
 
