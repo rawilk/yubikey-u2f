@@ -1,3 +1,3 @@
 #!/bin/sh
 
-compser install
+composer install
