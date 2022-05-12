@@ -88,14 +88,15 @@ Please review [my security policy](.github/SECURITY.md) on how to report securit
 
 Inspiration for this package comes from:
 
-- [marcinkozak/yubikey](https://github.com/MarcinKozak/Yubikey)
-- [Yubico/php-yubico](https://github.com/Yubico/php-yubico)
+-   [marcinkozak/yubikey](https://github.com/MarcinKozak/Yubikey)
+-   [Yubico/php-yubico](https://github.com/Yubico/php-yubico)
 
 ## Alternatives
+
 I've created this package since any existing solutions are either archived or not actively maintained anymore, and are not using updated code bases.
 If you have an alternative to this package, please feel free to PR an update the README with your package on it.
 
-- [marcinkozak/yubikey](https://github.com/MarcinKozak/Yubikey)
+-   [marcinkozak/yubikey](https://github.com/MarcinKozak/Yubikey)
 
 ## License
 
