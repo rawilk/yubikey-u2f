@@ -62,6 +62,9 @@ $user->verifyYubikeyIdentity(request()->otp);
 **Note:** `request()->otp` is just an example of retrieving the input sent to the server containing the security key signature that is generated
 when touching the security key. Make sure to adjust accordingly depending on how you capture that.
 
+## Documentation
+For more documentation, please visit: https://randallwilk.dev/docs/yubikey-u2f
+
 ## Testing
 
 ```bash
