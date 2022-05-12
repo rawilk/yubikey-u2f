@@ -3,7 +3,6 @@
 namespace Rawilk\Yubikey\Tests;
 
 use Dotenv\Dotenv;
-use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
 use Rawilk\Yubikey\YubikeyServiceProvider;
 
