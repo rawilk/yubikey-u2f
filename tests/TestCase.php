@@ -14,10 +14,6 @@ class TestCase extends Orchestra
         $this->loadEnvironmentVariables();
 
         parent::setUp();
-
-        Factory::guessFactoryNamesUsing(
-            fn (string $modelName) => 'Rawilk\\Yubikey\\Database\\Factories\\' . class_basename($modelName) . 'Factory'
-        );
     }
 
     protected function getPackageProviders($app): array
