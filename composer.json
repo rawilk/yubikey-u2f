@@ -5,7 +5,9 @@
         "rawilk",
         "laravel",
         "yubikey",
-        "yubico"
+        "yubico",
+        "2fa",
+        "u2f"
     ],
     "homepage": "https://github.com/rawilk/yubikey-u2f",
     "license": "MIT",
