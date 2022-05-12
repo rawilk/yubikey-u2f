@@ -46,3 +46,6 @@ jobs:
 
             -   name: Execute tests
                 run: vendor/bin/pest
+                env:
+                    YUBIKEY_CLIENT_ID: ${{ secrets.YUBIKEY_CLIENT_ID }}
+                    YUBIKEY_SECRET_KEY: ${{ secrets.YUBIKEY_SECRET_KEY }}
