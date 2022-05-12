@@ -2,6 +2,7 @@
 
 namespace Rawilk\Yubikey;
 
+use BadMethodCallException;
 use Illuminate\Http\Client\Pool;
 use Illuminate\Http\Client\Response;
 use Illuminate\Support\Facades\Http;
@@ -33,6 +34,13 @@ class Yubikey
     protected ?int $timeout = null;
 
     protected readonly array $urls;
+
+    /**
+     * In certain tests, it's beneficial for us to not verify
+     * the authenticity of the signature returned from the
+     * server.
+     */
+    protected bool $noVerifySignature = false;
 
     public function __construct(
         protected readonly string $clientId,
@@ -147,6 +155,10 @@ class Yubikey
 
     protected function verifyResponseSignature(array $response): void
     {
+        if ($this->noVerifySignature) {
+            return;
+        }
+
         $params = [
             'nonce',
             'otp',
@@ -181,9 +193,6 @@ class Yubikey
     protected function ensureResponseStatusIsOk(string $status): bool
     {
         $enum = YubicoResponseStatus::tryFrom($status);
-        if (! $enum) {
-            throw YubikeyVerifyException::unknownStatus();
-        }
 
         return match ($enum) {
             YubicoResponseStatus::OK => true,
@@ -196,6 +205,7 @@ class Yubikey
             YubicoResponseStatus::OPERATION_NOT_ALLOWED => throw YubikeyVerifyException::operationNotAllowed(),
             YubicoResponseStatus::REPLAYED_OTP => throw YubikeyVerifyException::replayedOtp(),
             YubicoResponseStatus::REPLAYED_REQUEST => throw YubikeyVerifyException::replayedRequest(),
+            null => throw YubikeyVerifyException::unknownStatus(),
         };
     }
 
@@ -208,7 +218,7 @@ class Yubikey
         return preg_replace('/\+/', '%2B', $signature);
     }
 
-    protected function getOtpIdentity(string $otp): string
+    public function getOtpIdentity(string $otp): string
     {
         // According to the docs (https://developers.yubico.com/yubikey-val/Getting_Started_Writing_Clients.html),
         // we should always be able to strip off the last 32 characters of the otp string, and the remaining value
@@ -267,5 +277,16 @@ class Yubikey
         if (! $this->secretKey) {
             throw YubikeyVerifyException::missingClientSecret();
         }
+    }
+
+    public function noVerifySignature(): self
+    {
+        if (! app()->environment('testing')) {
+            throw new BadMethodCallException('This method is only allowed in tests.');
+        }
+
+        $this->noVerifySignature = true;
+
+        return $this;
     }
 }

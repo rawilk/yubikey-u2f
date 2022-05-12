@@ -60,7 +60,7 @@
                 "Rawilk\\Yubikey\\YubikeyServiceProvider"
             ],
             "aliases": {
-                "Yubikey": "Rawilk\\Yubikey\\Facades\\YubikeyFacade"
+                "Yubikey": "Rawilk\\Yubikey\\Facades\\Yubikey"
             }
         }
     },

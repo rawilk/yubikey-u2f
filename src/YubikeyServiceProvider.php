@@ -15,4 +15,22 @@ class YubikeyServiceProvider extends PackageServiceProvider
             ->hasViews()
             ->hasMigration('create_yubikey-u2f_table');
     }
+
+    public function packageRegistered(): void
+    {
+        $this->app->bind(
+            Yubikey::class,
+            fn ($app) => new Yubikey(
+                $app['config']['yubikey-u2f.client_id'],
+                $app['config']['yubikey-u2f.secret_key']
+            )
+        );
+    }
+
+    public function provides(): array
+    {
+        return [
+            Yubikey::class,
+        ];
+    }
 }

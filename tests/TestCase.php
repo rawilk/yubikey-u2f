@@ -2,6 +2,7 @@
 
 namespace Rawilk\Yubikey\Tests;
 
+use Dotenv\Dotenv;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
 use Rawilk\Yubikey\YubikeyServiceProvider;
@@ -10,6 +11,8 @@ class TestCase extends Orchestra
 {
     protected function setUp(): void
     {
+        $this->loadEnvironmentVariables();
+
         parent::setUp();
 
         Factory::guessFactoryNamesUsing(
@@ -22,6 +25,17 @@ class TestCase extends Orchestra
         return [
             YubikeyServiceProvider::class,
         ];
+    }
+
+    protected function loadEnvironmentVariables(): void
+    {
+        if (! file_exists(__DIR__ . '/../.env')) {
+            return;
+        }
+
+        $dotEnv = Dotenv::createImmutable(__DIR__ . '/..');
+
+        $dotEnv->load();
     }
 
     public function getEnvironmentSetUp($app)
