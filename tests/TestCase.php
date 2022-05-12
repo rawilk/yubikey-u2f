@@ -5,7 +5,6 @@ namespace Rawilk\Yubikey\Tests;
 use Dotenv\Dotenv;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Rawilk\Yubikey\Tests\Models\User;
 use Rawilk\Yubikey\YubikeyServiceProvider;
 
 class TestCase extends Orchestra

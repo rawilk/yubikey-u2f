@@ -1,9 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Gate;
+use function Pest\Laravel\actingAs;
 use Rawilk\Yubikey\Enums\YubicoTestTokens;
 use Rawilk\Yubikey\Tests\Models\User;
-use function Pest\Laravel\actingAs;
 
 it('allows a user to rename their own key', function () {
     $user = User::factory()->create();
