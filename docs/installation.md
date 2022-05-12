@@ -14,6 +14,7 @@ composer require rawilk/yubikey-u2f
 ## Configuration
 
 ### Publishing the config file
+
 You may publish the config file like this:
 
 ```bash
@@ -48,6 +49,7 @@ php artisan migrate
 ## Models
 
 ### YubikeyIdentity Model
+
 The package provides a model for representing a tied security key with a user account. You may extend our model or use your own model by specifying it in the configuration.
 
 ```php
@@ -55,10 +57,10 @@ The package provides a model for representing a tied security key with a user ac
 
 return [
     ...
-    
+
     'database' => [
         ...
-        
+
         'model' => \Rawilk\Yubikey\Models\YubikeyIdentity::class,
     ],
 ];
@@ -67,6 +69,7 @@ return [
 > {note} If you use your own model, it must implement the `\Rawilk\Yubikey\Contracts\YubikeyIdentity` interface!
 
 ### User Model
+
 To associate and verify security keys with your user model, you need to add the `\Rawilk\Yubikey\Models\HasYubikeys` trait to your user model. Be sure to also run the migrations for this package.
 
 ## Translations
