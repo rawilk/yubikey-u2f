@@ -36,8 +36,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Rawilk\\Yubikey\\": "src",
-            "Rawilk\\Yubikey\\Database\\Factories\\": "database/factories"
+            "Rawilk\\Yubikey\\": "src"
         }
     },
     "autoload-dev": {
