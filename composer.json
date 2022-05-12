@@ -27,7 +27,7 @@
         "friendsofphp/php-cs-fixer": "^3.0",
         "guzzlehttp/guzzle": "^7.4",
         "nunomaduro/collision": "^6.0",
-        "orchestra/testbench": "^7.0",
+        "orchestra/testbench": "^7.5",
         "pestphp/pest": "^1.21",
         "pestphp/pest-plugin-laravel": "^1.1",
         "spatie/laravel-ray": "^1.26"
